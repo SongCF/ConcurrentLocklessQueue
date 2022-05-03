@@ -15,14 +15,14 @@ import java.util.concurrent.CountDownLatch;
  * @author dx
  * @version : ConcurrentLocklessQueueTest.java
  */
-public class ConcurrentLocklessQueueTest {
+public class ConcurrentLocklessQueueTest001 {
 
     public static final EventFactory<EventModel> EVENT_FACTORY        = () -> new EventModel();
     static              BlockingWaitStrategy     blockingWaitStrategy = new BlockingWaitStrategy();
     static              DataPool<EventModel>     dataPool;
 
     static final int            poolSize       = 1024;
-    static final int            CNT            = 10;
+    static final int            CNT            = 10000;
     static final int            producers      = 2;
     static final int            consumers      = 4;
     static       CountDownLatch countDownLatch = new CountDownLatch(producers);
@@ -47,6 +47,7 @@ public class ConcurrentLocklessQueueTest {
         //waiting
         try {
             countDownLatch.await();
+            System.out.println("produce event end, waiting consume 5s");
             Thread.sleep(5000);
         } catch (Exception e) {
             e.printStackTrace();

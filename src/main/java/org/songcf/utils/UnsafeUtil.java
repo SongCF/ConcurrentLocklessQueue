@@ -8,23 +8,18 @@ import java.security.PrivilegedExceptionAction;
 
 public class UnsafeUtil {
 
-    private static final Unsafe THE_UNSAFE;
-
-    ///**
-    // * 通过反射方式获取
-    // *
-    // * @return
-    // */
-    //public static Unsafe reflectGetUnsafe() {
+    //public static Unsafe getUnsafe() {
     //    try {
     //        Field field = Unsafe.class.getDeclaredField("theUnsafe");
     //        field.setAccessible(true);
-    //        THE_UNSAFE = (Unsafe) field.get(null);
+    //        Unsafe unsafe = (Unsafe) field.get(null);
+    //        return unsafe;
     //    } catch (NoSuchFieldException | IllegalAccessException e) {
     //        throw new RuntimeException("Unable to load unsafe", e);
     //    }
-    //    return THE_UNSAFE;
     //}
+
+    private static final Unsafe THE_UNSAFE;
 
     static {
         try {
@@ -42,11 +37,6 @@ public class UnsafeUtil {
         }
     }
 
-    /**
-     * Get a handle on the Unsafe instance, used for accessing low-level concurrency and memory constructs.
-     *
-     * @return The Unsafe
-     */
     public static Unsafe getUnsafe() {
         return THE_UNSAFE;
     }

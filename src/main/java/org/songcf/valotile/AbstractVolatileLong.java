@@ -6,11 +6,12 @@ import sun.misc.Unsafe;
 public abstract class AbstractVolatileLong {
 
     protected static final Unsafe unsafe = UnsafeUtil.getUnsafe();
-    protected static final long   offset;
+    protected final        long   offset;
 
-    static {
+    //这里是抽象类，要用真实类的value字段，所以不能用static块
+    {
         try {
-            offset = unsafe.objectFieldOffset(VolatileLongValueWithLongPadding.class.getDeclaredField("value"));
+            offset = unsafe.objectFieldOffset(this.getClass().getDeclaredField("value"));
         } catch (Exception ex) { throw new Error(ex); }
     }
 
