@@ -12,7 +12,6 @@ import java.util.concurrent.CountDownLatch;
 /**
  * test case
  *
- * @author dx
  * @version : ConcurrentLocklessQueueTest.java
  */
 public class ConcurrentLocklessQueueTest001 {
