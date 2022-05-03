@@ -121,7 +121,7 @@ public class LogUtil {
     private static String getLogKey() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss.SSSZ");
         String ts = simpleDateFormat.format(new Date());
-        return "[Scheduler][" + ts + "]";
+        return "[LogUtil][" + ts + "]";
     }
 
 }
