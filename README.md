@@ -1,3 +1,8 @@
+# @Deprecated
+基本不需要再用了。
+JDK经过几版迭代优化，目前ArrayBlockingQueue的性能在多Producer多Consumer的情况下性能也不差了。
+
+
 # ConcurrentLocklessQueue
 
 高性能并发无锁队列，同时支持多生产者、多消费者。使用二阶段提交、cas、循环队列、缓存行填充等优化手段。
