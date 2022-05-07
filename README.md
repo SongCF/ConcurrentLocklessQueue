@@ -1,6 +1,6 @@
 # @Deprecated
-基本不需要再用了。
-JDK经过几版迭代优化，目前ArrayBlockingQueue的性能在多Producer多Consumer的情况下性能也不差了。
+同disruptor 基本不需要再用了。
+JDK经过几版迭代优化，目前ArrayBlockingQueue的性能在多Producer多Consumer的情况下性能也很高。
 
 
 # ConcurrentLocklessQueue
