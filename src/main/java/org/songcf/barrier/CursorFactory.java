@@ -1,11 +1,13 @@
 package org.songcf.barrier;
 
 import org.songcf.valotile.AbstractVolatileLong;
+import org.songcf.valotile.VolatileLongValueWithLongPadding;
 import org.songcf.valotile.VolatileLongValueWithoutPadding;
 
 public class CursorFactory {
 
-    static String cursorValClass = VolatileLongValueWithoutPadding.class.getName();
+    static String cursorValClass = VolatileLongValueWithLongPadding.class.getName();
+    //static String cursorValClass = VolatileLongValueWithoutPadding.class.getName();
 
     public static Cursor newCursor() {
         try {

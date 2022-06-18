@@ -1,5 +1,7 @@
 package org.songcf.barrier;
 
+import java.util.List;
+
 public interface DataBarrier {
 
     /**
@@ -70,4 +72,19 @@ public interface DataBarrier {
      * 获取依赖的屏障
      */
     DataBarrier[] getDependentCursors();
+
+    /**
+     * 设置依赖的屏障
+     *
+     * @param dependentCursors
+     */
+    void setParentCursors(List<DataBarrier> dependentCursors);
+
+    /**
+     * 获取依赖的屏障
+     */
+    List<DataBarrier> getParentCursors();
+    List<DataBarrier> getChildCursors();
+
+
 }

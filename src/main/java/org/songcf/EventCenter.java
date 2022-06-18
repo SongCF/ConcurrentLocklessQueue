@@ -80,8 +80,8 @@ public class EventCenter<E> {
         //check dependent is valid
         this.handlerMap.forEach((k, v) -> {
             AssertUtils.isTrue(k.getConsumeBarrier() != null
-                    && k.getConsumeBarrier().getDependentCursors() != null
-                    && k.getConsumeBarrier().getDependentCursors().length > 0, "invalid handler dependent");
+                    && k.getConsumeBarrier().getChildCursors() != null
+                    && k.getConsumeBarrier().getChildCursors().size() > 0, "invalid handler dependent");
         });
         //start processor
         this.handlerMap.forEach((k, v) -> v.startThread());
